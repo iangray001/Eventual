@@ -1,0 +1,33 @@
+{
+  "BTTWidgetName" : "Eventual Runner",
+  "BTTTriggerType" : 639,
+  "BTTTriggerTypeDescription" : "Apple Script Widget",
+  "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+  "BTTPredefinedActionType" : -1,
+  "BTTPredefinedActionName" : "No Action",
+  "BTTEnabled2" : 1,
+  "BTTUUID" : "D194F2E4-6975-4DD2-9021-D60126DBB0DA",
+  "BTTEnabled" : 1,
+  "BTTModifierMode" : 0,
+  "BTTOrder" : 5,
+  "BTTDisplayOrder" : 0,
+  "BTTMergeIntoTouchBarGroups" : 0,
+  "BTTTriggerConfig" : {
+    "BTTScriptType" : 0,
+    "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
+    "BTTTouchBarItemIconWidth" : 1,
+    "BTTTouchBarButtonFontSize" : 12,
+    "BTTTouchBarItemPlacement" : 0,
+    "BTTTouchBarAlternateBackgroundColor" : "128.829533, 128.829533, 128.829533, 255.000000",
+    "BTTTouchBarButtonCornerRadius" : 0,
+    "BTTTouchBarScriptUpdateInterval" : 60.110874176025391,
+    "BTTTouchBarAppleScriptString" : "set eventual to \"~\/Documents\/Eventual\/.build\/release\/Eventual\"\rset options to \"~\/Documents\/Eventual\/eventual.conf\"\r\rtell application \"BetterTouchTool\"\r\tset pid to get_string_variable \"eventualpid\"\r\tset pid to pid as number\r\t\r\tset pidcheck to \"ps -p \" & pid & \" | wc -l | tr -d '[:space:]'\"\r\tset ps to do shell script pidcheck\r\t\r\tif ps is \"1\" then\r\t\tdo shell script eventual & \" \" & options & \" &\"\r\t\treturn \"started\"\r\telse\r\t\treturn \"already running\"\r\tend if\rend tell\r",
+    "BTTTouchBarAppleScriptStringRunOnInit" : true,
+    "BTTTouchBarButtonName" : "Eventual Runner",
+    "BTTTouchBarOnlyShowIcon" : true,
+    "BTTTouchBarFreeSpaceAfterButton" : 0,
+    "BTTTouchBarAppleScriptUsePath" : 0,
+    "BTTTouchBarItemIconHeight" : 1,
+    "BTTTouchBarItemPadding" : 0
+  }
+}
