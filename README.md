@@ -1,5 +1,7 @@
 #  Eventual
 
+![Example of Eventual's calendar widget](images/calendarexample.jpg)
+
 ## Purpose
 
 Eventual is a service that helps [BetterTouchTool](https://folivora.ai/) (BTT) to display a wider range of information on the touch bar of recent Macbook Pros. Unlike solutions which involve BTT repeatedly running scripts, Eventual subscribes to the appropriate native macOS frameworks so that polling is not required. Updates are only pushed when something has changed, ensuring that battery impact is minimal.
