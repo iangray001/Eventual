@@ -109,9 +109,8 @@ class AudioService : Service {
 			lastKey = key
 			var json = "{\"text\":\"Volume\",\"icon_data\": \"" + AudioService.icons[key]! + "\"}"
 			json = json.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-			
 			BTT.setPersistentStringVariable(varName: "volstate", to: json) { (e) in
-				print("Error updating BTT with volume icon data.")
+				print("Error updating BTT with volume icon data. " + e.localizedDescription)
 				exit(1)
 			}
 			BTT.refreshWidget(uuid: widgetUUID)
