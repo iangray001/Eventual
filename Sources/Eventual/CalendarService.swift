@@ -136,7 +136,7 @@ class CalendarService : Service {
 				if eventnum >= evs.count {
 					output = uuidnum == 0 ? "No calendar events" : ""
 				} else {
-					if daySeparators && evs[eventnum].dayOfWeek() != nil && evs[eventnum].dayOfWeek()! != currentDoW {
+					if daySeparators && evs[eventnum].dayOfWeek() != nil && evs[eventnum].dayOfWeek()! > currentDoW {
 						currentDoW = evs[eventnum].dayOfWeek()!
 						output = "●"
 					} else {
