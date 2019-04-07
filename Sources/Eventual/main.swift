@@ -26,7 +26,7 @@ var services : [Service] = []
 func countRunningCopies(_ ourname : String) -> Int {
 	let task = Process()
 	task.launchPath = "/bin/ps"
-	task.arguments = ["-c", "-o", "command="]
+	task.arguments = ["-A", "-c", "-o", "command="]
 	let pipe = Pipe()
 	task.standardOutput = pipe
 	task.launch()
