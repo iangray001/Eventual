@@ -21,6 +21,32 @@ enum ServiceType {
 
 var services : [Service] = []
 
+
+//Use the output of ps to count how many processes are named ourname
+func countRunningCopies(_ ourname : String) -> Int {
+	let task = Process()
+	task.launchPath = "/bin/ps"
+	task.arguments = ["-c", "-o", "command="]
+	let pipe = Pipe()
+	task.standardOutput = pipe
+	task.launch()
+	let data = pipe.fileHandleForReading.readDataToEndOfFile()
+	let output = String(data: data, encoding: String.Encoding.utf8)!
+	
+	var count = 0
+	for line in output.components(separatedBy: "\n") {
+		if line.trimmingCharacters(in: NSCharacterSet.whitespaces) == "Eventual" {
+			count = count + 1
+		}
+	}
+	return count
+}
+
+//If we are already running elsewhere (so countRunningCopies will return at least 2) then quit
+if countRunningCopies("Eventual") > 1 {
+	exit(0)
+}
+
 //Check command line arguments
 if CommandLine.argc != 2 {
 	print("Usage: " + (CommandLine.arguments[0] as NSString).lastPathComponent + " <path to config>")
