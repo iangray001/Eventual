@@ -21,7 +21,7 @@
     "BTTTouchBarAlternateBackgroundColor" : "128.829533, 128.829533, 128.829533, 255.000000",
     "BTTTouchBarButtonCornerRadius" : 0,
     "BTTTouchBarScriptUpdateInterval" : 60.854640960693359,
-    "BTTTouchBarAppleScriptString" : "set eventual to \"~\/Documents\/Eventual\/.build\/release\/Eventual\"\rset options to \"~\/Documents\/Eventual\/eventual.conf\"\r\rdo shell script eventual & \" \" & options & \" &\"\r",
+    "BTTTouchBarAppleScriptString" : "set eventual to \"~\/Documents\/Eventual\/Eventual\"\rset options to \"~\/Documents\/Eventual\/eventual.conf\"\r\rdo shell script eventual & \" \" & options & \" &\"\r",
     "BTTTouchBarAppleScriptStringRunOnInit" : true,
     "BTTTouchBarButtonName" : "Eventual Runner",
     "BTTTouchBarOnlyShowIcon" : true,
