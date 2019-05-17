@@ -20,7 +20,6 @@ class BluetoothService : Service {
 	
 	func error(e : Error) {
 		print("Error sending bluetooth state to BetterTouchTool: " + e.localizedDescription)
-		exit(1)
 	}
 
 	//Called when any Bluetooth device connects

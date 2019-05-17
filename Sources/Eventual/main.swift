@@ -93,7 +93,6 @@ for service in config.services {
 let pid = ProcessInfo.processInfo.processIdentifier
 BTT.setPersistentStringVariable(varName: "eventualpid", to: String(pid)) { (e) in
 	print("Error sending PID to BetterTouchTool: " + e.localizedDescription)
-	exit(1)
 }
 
 //Enter a non-terminating run loop so that we can receive framework callbacks
