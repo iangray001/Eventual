@@ -6,8 +6,6 @@
 
 Eventual is a service that helps [BetterTouchTool](https://folivora.ai/) (BTT) to display a wider range of information on the touch bar of recent Macbook Pros. Unlike solutions which involve BTT repeatedly running scripts, Eventual subscribes to the appropriate native macOS frameworks so that polling is not required. Updates are only pushed when something has changed, ensuring that battery impact is minimal.
 
-Eventual is heavily inspired by the work by [Andrew Chidden](https://github.com/andrewchidden/btt-services). Unlike Andrew's controllers, Eventual has more features, more options to customise its functionality, and it passes data directly to BTT via `http`, rather than using temporary files.
-
 Eventual can do the following:
 
 * Display upcoming calendar events on the touch bar. Multiple calendars are supported, with many different display styles and options. 
@@ -16,13 +14,15 @@ Eventual can do the following:
 * Only use what you need. e.g. if you do not set up a Bluetooth widget, then the Bluetooth service will not run.
 * All features can be duplicated, allowing multiple different widgets to carry different info, formatting, etc.
 
+Eventual is heavily inspired by the work of [Andrew Chidden](https://github.com/andrewchidden/btt-services). Eventual has more features and more options to customise its functionality.
+
 
 ## Installation and Quick Start
 
-Before using Eventual, you must enable the webserver in BetterTouchTool. 
+Follow these steps to install Eventual: 
 
-* In BTT, click `Advanced` | `Advanced Settings` | `Webserver` and enable the server. `https` is not currently supported. Set "listen on" to `127.0.0.1` and select a port. Eventual defaults to `60813`. Finally you should set a shared secret.
-* Download the latest release binary and config file. Download [`Eventual`](https://github.com/iangray001/Eventual/blob/master/Eventual) and [`eventual.conf`](https://github.com/iangray001/Eventual/blob/master/eventual.conf). I suggest you put then in `~/Documents/Eventual` (where `~` is your home folder).
+* In BTT, click `Advanced` | `Advanced Settings` | `Webserver` and enable the webserver. `https` is not currently supported. Set "listen on" to `127.0.0.1` and select a port. Eventual defaults to `60813`. Finally the shared secret to something, it can be any random text.
+* Download the latest Eventual binary and config file. Download [`Eventual`](https://github.com/iangray001/Eventual/blob/master/Eventual) and [`eventual.conf`](https://github.com/iangray001/Eventual/blob/master/eventual.conf). I suggest you put then in `~/Documents/Eventual` (where `~` is your home folder).
 * Update `bttSecret` in `eventual.conf` to correspond to the shared secret that you set.
 * Now add the Touch Bar widgets to BTT. Consult the rest of this document to do this individually, or use the Example set to add a set that shows all the capabilities of Eventual. Open [`example.json`](https://github.com/iangray001/Eventual/blob/master/widgets/example.json), copy the contents of that file, go to 'TouchBar' in BetterTouchTool, and press Cmd-V to paste them in. 
 
